@@ -1,8 +1,12 @@
+# Non-blocking workflow starter
 
-# bitrise-step-non-blocking-workflow-starter
+Non-blocking workflow starter with built-in Github pending health status report
 
-This is a placeholder README.md for a new repository
+## How to use this Step
 
-### License
-
-This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
+```
+- git::https://github.com/hmrc/bitrise-step-non-blocking-workflow-starter.git@main:
+   title: My step
+   inputs:
+   - step_workflows: workflow1 workflow2
+```

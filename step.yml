@@ -1,0 +1,35 @@
+title: |-
+  Non-blocking workflow starter
+summary: |
+  Non-blocking workflow starter with built-in Github pending health status report
+description: |
+  Non-blocking workflow starter with built-in Github pending health status report
+website: https://github.com/hmrc/bitrise-step-non-blocking-workflow-starter
+source_code_url: https://github.com/hmrc/bitrise-step-non-blocking-workflow-starter
+support_url: https://github.com/hmrc/bitrise-step-non-blocking-workflow-starter/issues
+host_os_tags:
+  - osx-10.10
+  - ubuntu-16.04
+type_tags:
+  - utility
+is_requires_admin_user: true
+is_always_run: false
+is_skippable: false
+run_if: ""
+deps:
+  brew:
+    - name: git
+    - name: wget
+  apt_get:
+    - name: git
+    - name: wget
+toolkit:
+  bash:
+    entry_file: step.sh
+inputs:
+  - step_workflows: null
+    opts:
+      description: The workflow(s) to start, separated with a single space. For example `workflow1 workflow2``
+      is_required: true
+      summary: The workflow(s) to start, separated with a single space. For example `workflow1 workflow2`
+      title: Workflows
