@@ -10,4 +10,5 @@ Add the following to your `bitrise.yml`
    title: Non-blocking workflow starter
    inputs:
    - step_workflows: workflow1 workflow2
+   is_always_run: true
 ```
