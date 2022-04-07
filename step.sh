@@ -19,7 +19,7 @@ pending_health_check() {
     STATUSCODE=$(curl --silent --output /dev/stderr --write-out "%{http_code}" \
         -X POST -H 'Accept: application/vnd.github.v3+json' \
         -H 'Authorization: token '"$GITHUB_TOKEN"'' https://api.github.com/repos/hmrc/$REPO_NAME/statuses/$BITRISE_GIT_COMMIT \
-        -d '{"state":"pending", "target_url": "https://app.bitrise.io/build/'"$1"'", "description": "Pending - '"$BITRISEIO_GIT_REPOSITORY_SLUG"'", "context": "ci/bitrise/'"$BITRISE_GIT_BRANCH"'/'"$1"'"}' \
+        -d '{"state":"pending", "target_url": "https://app.bitrise.io/build/'"$1"'", "description": "'"$BITRISEIO_GIT_REPOSITORY_SLUG"'", "context": "ci/bitrise/'"$BITRISE_GIT_BRANCH"'/'"$1"'"}' \
     )
     if (($STATUSCODE >= 200 && $STATUSCODE < 300)); then
         echo "Updated status for workflow: ${1}"
